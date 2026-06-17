@@ -67,6 +67,9 @@ test.describe('Complete Quote Creation Flow', () => {
     await page.click('button:has-text("Next")');
 
     // Step 7: Step 2 (Product & Tier Selection)
+    if (!productId) {
+      throw new Error('Failed to extract product ID from URL');
+    }
     await page.selectOption('select[id="productId"]', productId);
 
     // Wait for tiers to load
@@ -114,6 +117,10 @@ test.describe('Complete Quote Creation Flow', () => {
 
     const shareableUrl = page.url();
     const shareToken = shareableUrl.split('/').pop();
+
+    if (!shareToken) {
+      throw new Error('Failed to extract share token from URL');
+    }
 
     // Verify quote document is displayed
     await expect(page.locator('text=QUOTE')).toBeVisible();
