@@ -138,10 +138,10 @@ export function QuoteDocument({ quote }: QuoteDocumentProps) {
 
               {/* Total Row */}
               <tr className="border-t-2 border-gray-900 bg-gray-900 text-white">
-                <td colSpan={2} className="py-4 px-4 font-bold text-lg">
+                <td colSpan={2} className="py-4 px-4 text-white font-bold text-lg">
                   TOTAL
                 </td>
-                <td className="py-4 px-4 text-right font-bold text-xl">
+                <td className="py-4 px-4 text-white text-right font-bold text-xl">
                   {formatCurrency(quote.totalPrice)}
                 </td>
               </tr>
