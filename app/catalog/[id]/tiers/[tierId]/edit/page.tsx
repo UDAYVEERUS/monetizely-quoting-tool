@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import Link from 'next/link';
-import { prisma } from '@/lib/prisma';
 
 export default function EditTierPage() {
   const router = useRouter();

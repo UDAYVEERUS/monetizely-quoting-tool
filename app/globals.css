@@ -1,35 +1,106 @@
 @import "tailwindcss";
 
+* {
+  @apply transition-colors duration-200;
+}
+
 @layer components {
+  /* Modern Buttons */
   .btn {
-    @apply inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-200 hover:shadow-xl hover:shadow-blue-300 hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center rounded-lg border-2 border-gray-200 bg-white px-6 py-2.5 text-sm font-semibold text-gray-700 shadow-sm hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
   }
 
   .btn-sm {
-    @apply inline-flex items-center rounded px-2.5 py-1.5 text-sm font-medium;
+    @apply inline-flex items-center rounded-md px-3 py-1.5 text-xs font-medium transition-all hover:scale-105;
   }
 
+  /* Modern Cards */
   .card {
-    @apply rounded-lg border border-gray-200 bg-white p-6 shadow-sm;
+    @apply rounded-2xl border border-gray-100 bg-white p-6 shadow-lg shadow-gray-100 hover:shadow-xl hover:shadow-gray-200;
   }
 
+  /* Form Styling */
   .form-group {
     @apply mb-6;
   }
 
   .form-label {
-    @apply block text-sm font-medium text-gray-700;
+    @apply block text-sm font-semibold text-gray-800 mb-2;
   }
 
-  .form-input {
-    @apply mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm;
-  }
-
+  .form-input,
   .form-select {
-    @apply mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm;
+    @apply w-full rounded-xl border-2 border-gray-200 bg-gray-50 px-4 py-2.5 text-sm font-medium text-gray-900 transition-all placeholder:text-gray-400 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 hover:border-gray-300;
+  }
+
+  .form-input::placeholder {
+    @apply text-gray-400 font-normal;
+  }
+
+  /* Table Styling */
+  table {
+    @apply w-full border-collapse;
+  }
+
+  thead {
+    @apply bg-gradient-to-r from-gray-50 to-gray-100;
+  }
+
+  th {
+    @apply border-b-2 border-gray-200 px-6 py-4 text-left text-xs font-bold uppercase tracking-wide text-gray-700;
+  }
+
+  td {
+    @apply border-b border-gray-100 px-6 py-4 text-sm text-gray-600;
+  }
+
+  tr:hover {
+    @apply bg-blue-50;
+  }
+
+  /* Select Dropdown Enhancement */
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232563eb' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+
+  /* Checkbox Styling */
+  input[type="checkbox"] {
+    @apply w-5 h-5 text-blue-600 rounded-lg border-2 border-gray-300 focus:ring-2 focus:ring-blue-500 cursor-pointer;
+  }
+
+  /* Input Focus Glow */
+  input:focus,
+  select:focus,
+  textarea:focus {
+    @apply ring-2 ring-blue-200;
+  }
+
+  /* Textarea Enhancement */
+  textarea {
+    @apply w-full rounded-xl border-2 border-gray-200 bg-gray-50 px-4 py-2.5 font-medium text-gray-900 transition-all focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200;
+  }
+
+  /* Error States */
+  .form-input[aria-invalid="true"],
+  .form-select[aria-invalid="true"] {
+    @apply border-red-500 focus:border-red-500 focus:ring-red-200;
+  }
+
+  /* Badge/Label */
+  .badge {
+    @apply inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700;
+  }
+
+  /* Loading State */
+  .animate-pulse {
+    @apply opacity-75;
   }
 }
