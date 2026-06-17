@@ -18,7 +18,7 @@ export default function RootLayout({
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
-                <a href="/" className="text-2xl font-bold text-blue-600">
+                <a href="/" className="text-2xl font-bold text-green-600">
                   Monetizely
                 </a>
               </div>
